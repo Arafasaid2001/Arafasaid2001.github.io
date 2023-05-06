@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        
+        font-size: 35px;
+        color: rgb(16, 17, 16);
+        margin: auto;
+        background-color: chocolate;
+    }
+</style>
+<body >
+    <center>
+        <form id="form">
+            <input type="text" id="username" ><br>
+            <input type="password" id="passward" ><br>
+            <button>Login</button>
+        </form>
+        <div id="info"></div>
+    </center>
+
+</body>
+    <script>
+    let contactinf = document.querySelector("#form");
+        contactinf.addEventListener("submit",function(event){
+            event.preventDefault();
+
+            let username = document.querySelector("#username").value;
+            let passward = document.querySelector("#passward").value;
+
+            if(username === "admin" && passward === "passward"){
+                let contacts = JSON.parse(localStorage.getItem("contact"))||[];
+                let contactinfo = "";
+
+                for(let a = 0 ;a < contacts.length;a++){
+                    contactinfo +="<h2>"+(a+1)+"</h2>";
+                    contactinfo +="<p>Fname"+contacts[a].Fname+"</P>";
+                    contactinfo +="<p>Lname"+contacts[a].Lname+"</P>";
+                    contactinfo +="<p>Address"+contacts[a].Adress+"</P>";
+                    contactinfo +="<p>Email"+contacts[a].Email+"</P>";
+                };
+                document.querySelector("#info").innerHTML=contactinfo;
+            } else{
+                alert ("Invalid user name or Passward");
+              
+            };
+            contactinf.reset();
+
+        });
+
+
+        
+    </script>
+</html>

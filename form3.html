@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #body{
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        background-color: rgb(113, 172, 170);
+        color: rgb(12, 12, 12);
+        font-size: 25px;
+    }
+    #div{
+        height: 550px;
+        width: 50%;
+        margin: 20px;
+        padding: 10px;
+        background-color: antiquewhite;
+        align-items: center;
+    }
+    
+</style>
+<body id="body">
+
+    <div style="display: flex;">
+        
+        <div id="div">
+            <form id="contact"> 
+                <center>
+                <p>FOR THE CONTACT AND COMMENT FILL THE FORM</p>
+                <p> <input type="text" id="Fname" placeholder=" Inter your Firstname" ></p>
+                <p><input type="text" id="Lname" placeholder="Inter your Last name"></p>
+                <p> <input type="text" id="Address" placeholder=" Inter your Address" ></p>
+                <p><input type="text" id="Email"   placeholder="Inter your Email"></p>
+                <comment></comment>
+
+                <button type="submit" > Submit </button>
+            </form>
+        </center>
+        </div>
+        
+        <div id="div"><center>
+            HERE YOU CAN FIND ME
+            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1983.
+            2192757668386!2d39. 25352212687962!3d-6.205738624329196!2m3!1f0!2f0!3f0!
+            3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2stz!4v1683264391058!5m2!1sen!2stz"
+            width="600" height="450"style="border:0;"  loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade" width="50%" height="380px"></iframe>
+            </center>
+        </div>
+    </div>
+</body>
+<script>
+    let contact = document.querySelector("#contact");
+    contact.addEventListener("submit",function(event){
+        event.preventDefault();
+        
+        let name = document.querySelector("#Fname").value;
+        let Lname = document.querySelector("#Lname").value;
+        let Address = document.querySelector("#Address").value;
+        let Email = document.querySelector("#Email").value;
+
+
+       //creating an object
+        let detail = {name:name, Lname:Email, Address:Address, Email:Email}; 
+
+        //
+        let details = JSON.parse(localStorage.getItem("details")) || [];
+
+        //
+        details.push(detail);
+
+        //to save in the local storage & creating keys for every data that has been entered
+        localStorage.setItem("details", JSON.stringify(details));
+
+        alert (`Thank you ${Fname} for your comment`);
+
+        contact.reset();    
+    });
+</script>
+</html>

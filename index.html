@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #header{
+            width: 98%;
+            height: 50px;
+            margin: 10px;
+            padding: 10px;
+            border: 20px;
+            text-align: left;
+            background-color:  rgb(94, 129, 212);
+            border-radius: 5ch;
+           align-items: center;
+            text-align: center;
+
+    }
+
+
+     #right{
+        width: 66%;
+        height: 400px;
+        margin: 0px;
+        padding: 10px;
+        border: 10px;
+        text-align: left;
+        background-color: rgb(148, 148, 135);
+        text-decoration: none; 
+           
+        
+    
+    }
+    
+    #h1{
+        color: black;
+        font-size: 25px;
+        font-style: oblique;
+    }
+    #footer{
+            width: 98%;
+            height: 70px;
+            margin: 0px;
+            padding: 10px;
+            border: 20px;
+            text-align: left;
+            background-color: rgb(94, 129, 212);
+            align: center;
+            text-align: center;
+            font-size: 10px;
+
+    }
+
+    #picha,#pich,#pic{
+        height: 420px;
+        width: 400px;
+    }
+
+</style>
+<body>
+    <div id="header">
+         WELCOME
+    </div>
+
+    <div style="display: flex;">
+        <div id="right" > 
+            <h1 id="h1" ><a href="index.html">  Dashbord</a></h1>           
+            <p><a href="MYWEB.html">Cariculum Vitae</a></p>
+            <p><a href="form3.html">ContactUs</a></p>
+            <p><a href="Form.html">Login</a></p>
+        <div>
+            <img src="PIC3.png" width="50%" height="200px" >
+           </div>     
+        </div>
+        
+        <div  style="max-width:200px">
+                <img class="mySlides" src="arafa1.png" id="picha">
+                <img class="mySlides" src="arafa4.jpg" id="pich">
+                <img class="mySlides" src="arafa3.jpg" id="pic">
+        </div> 
+    </div>
+    
+    <centere>
+    <div id="footer" style="font-style: italic;">
+        @Arafaseed
+        <p>arafaseed2000@gmail.com</p>
+        <p><img  src="pic1.png" style="height:15px;">0710585504</p>
+    </div>
+</centere>
+</body>
+
+<script>
+
+    var myIndex = 0;
+    photo();
+    
+    function photo() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+      }
+      myIndex++;
+      if (myIndex > x.length) {myIndex = 1}    
+      x[myIndex-1].style.display = "block";  
+      setTimeout(photo, 2000); // Change image every 2 seconds
+    }
+    </script>
+</html>
