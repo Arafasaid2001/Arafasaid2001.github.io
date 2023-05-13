@@ -35,7 +35,7 @@
                 <p><input type="text" id="Lname" placeholder="Inter your Last name"></p>
                 <p> <input type="text" id="Address" placeholder=" Inter your Address" ></p>
                 <p><input type="text" id="Email"   placeholder="Inter your Email"></p>
-                <comment></comment>
+              
 
                 <button type="submit" > Submit </button>
             </form>
@@ -43,7 +43,7 @@
         </div>
         
         <div id="div"><center>
-            HERE YOU CAN FIND ME
+          LOCATION
             
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1983.
             2192757668386!2d39. 25352212687962!3d-6.205738624329196!2m3!1f0!2f0!3f0!
@@ -64,22 +64,14 @@
         let Address = document.querySelector("#Address").value;
         let Email = document.querySelector("#Email").value;
 
+        localStorage.setItem("Fname",name);
+        localStorage.setItem("Lname",Lname);
+        localStorage.setItem("Address",Address);
+        localStorage.setItem("Email",Email);
 
-       //creating an object
-        let detail = {name:name, Lname:Email, Address:Address, Email:Email}; 
 
-        //
-        let details = JSON.parse(localStorage.getItem("details")) || [];
 
-        //
-        details.push(detail);
-
-        //to save in the local storage & creating keys for every data that has been entered
-        localStorage.setItem("details", JSON.stringify(details));
-
-        alert (`Thank you ${Fname} for your comment`);
-
-        contact.reset();    
+      
     });
 </script>
 </html>
